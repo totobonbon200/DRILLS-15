@@ -22,6 +22,7 @@ MIN_X, MAX_X = 800, 1600  # 좀비가 오가는 구간
 
 class Zombie:
     images = None
+    health = None
 
     def load_images(self):
         if Zombie.images is None:
@@ -29,12 +30,16 @@ class Zombie:
                 'Walk': [load_image(f'./zombie/Walk ({i}).png') for i in range(1, 11)]
             }
 
+    def load_health(self):
+            if Zombie.health is None:
+                Zombie.health = 2
+
     def __init__(self):
         self.load_images()
+        self.load_health()
         self.x, self.y = random.randint(MIN_X, MAX_X), 150
         self.frame = random.randint(0, 9)
         self.dir = random.choice([-1, 1])
-        self.health = 2
 
     def update(self):
         dt = game_framework.frame_time
