@@ -63,6 +63,8 @@ class Zombie:
         return self.x - 100, self.y - 100, self.x + 100, self.y + 100
 
     def handle_collision(self, group, other):
+        if group == "zombie:boy":
+                    game_framework.quit()
         if group == "zombie:ball":
             self.health = self.health - 1
             self.x = self.x / 2
