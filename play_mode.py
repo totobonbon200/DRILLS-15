@@ -11,8 +11,6 @@ boy = None
 
 
 def handle_events():
-
-
     event_list = get_events()
     for event in event_list:
         if event.type == SDL_QUIT:
@@ -39,15 +37,15 @@ def init():
 
     global zombies
     zombies = [Zombie() for _ in range(4)]
-    game_world.add_objects(zombies, 1)
+    game_world.add_ojects(zombies, 1)
 
     game_world.add_collision_pairs("boy:ball", boy, None)
     for ball in balls:
         game_world.add_collision_pairs("boy:ball", None, ball)
-
     for zombie in zombies:
         game_world.add_collision_pairs("boy:zombie", None, zombie)
         game_world.add_collision_pairs("zombie:ball", zombie, None)
+
 
 
 
