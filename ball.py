@@ -47,9 +47,6 @@ class Ball:
             game_world.remove_object(self)
         if group == "zombie:ball":
             game_world.remove_object(self)
-
-        if group == "zombie:ball":
-            game_world.remove_object(self)
             other.health -= 1
             other.x = other.x / 2
             other.y = other.y / 2

@@ -42,9 +42,9 @@ def init():
     game_world.add_collision_pairs("boy:ball", boy, None)
     for ball in balls:
         game_world.add_collision_pairs("boy:ball", None, ball)
-        for zombie in zombies:
-            game_world.add_collision_pairs("zombie:ball", zombie, None)
-            game_world.add_collision_pairs("boy:zombie", None, zombie)
+    for zombie in zombies:
+        game_world.add_collision_pairs("zombie:ball", zombie, None)
+        game_world.add_collision_pairs("boy:zombie", None, zombie)
 
 
 
