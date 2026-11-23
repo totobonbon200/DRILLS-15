@@ -62,4 +62,7 @@ class Zombie:
             self.health -= 1
             self.x = self.x / 2
             self.y = self.y / 2
+            if self.health <= 0:
+                game_world.remove_object(self)
+                game_world.remove_object(other)
 
